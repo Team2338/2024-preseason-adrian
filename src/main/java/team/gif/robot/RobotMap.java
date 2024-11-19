@@ -8,7 +8,8 @@ public abstract class RobotMap {
     public static final int PIGEON_ID = 5;
     public static final int LIMIT_SWITCH_ID = 8;
     public static final int TALON_ID = 8;
-    public static final int SPARK_MAX_ID= 45;
+    public static final int RSPARK_MAX_ID= 45;
+    public static final int LSPARK_MAX_ID= 55;
     public static final int PNUEMATIC_IN = 0;
     public static final int PNEUMATIC_OUT = 1;
 }
