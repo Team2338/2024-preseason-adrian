@@ -18,7 +18,5 @@ public class UI {
     public UI() {
         ShuffleboardTab shuffleboardTab = Shuffleboard.getTab("BAB");
 
-        shuffleboardTab.addDouble("NEO RPM", Robot.drivetrain::getRightMotorRPM);
-        shuffleboardTab.addDouble("NEO RPM", Robot.drivetrain::getLeftMotorRPM);
     }
 }
