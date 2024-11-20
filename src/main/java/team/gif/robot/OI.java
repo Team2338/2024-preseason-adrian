@@ -2,7 +2,10 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.Index;
+import team.gif.robot.commands.IndexBack;
 import team.gif.robot.commands.Shoot;
+import team.gif.robot.commands.ShootBack;
 
 public class OI {
     /*
@@ -88,7 +91,9 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
-        dA.whileTrue(new Shoot());
-
+        aA.whileTrue(new Shoot());
+        aB.whileTrue(new Index());
+        aY.whileTrue(new IndexBack());
+        aX.whileTrue(new ShootBack());
     }
 }

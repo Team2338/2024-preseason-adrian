@@ -19,4 +19,5 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
     public static final double SHOOTER_PERCENT = 0.75;
+    public static final double INDEXER_PERCENT = 0.75;
 }

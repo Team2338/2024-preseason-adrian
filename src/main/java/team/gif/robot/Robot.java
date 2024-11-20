@@ -30,6 +30,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain drivetrain;
   public static Pigeon pigeon;
   public static Shooter shooter;
+  public static Shooter indexer;
 
   public static UiSmartDashboard uiSmartDashboard;
 
@@ -44,6 +45,7 @@ public class Robot extends TimedRobot {
     drivetrain = new DriveTrain();
     drivetrain.setDefaultCommand(new ArcadeDrive());
     shooter = new Shooter();
+    indexer = new Shooter();
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();

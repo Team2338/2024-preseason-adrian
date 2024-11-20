@@ -12,20 +12,30 @@ import team.gif.robot.RobotMap;
 
 public class Shooter extends SubsystemBase {
     public static TalonSRX shooterMotor = new TalonSRX(RobotMap.SHOOTER);
+    public static TalonSRX indexerMotor = new TalonSRX(RobotMap.INDEXER);
   /** Creates a new ExampleSubsystem. */
     public Shooter() {
         shooterMotor = new TalonSRX(RobotMap.SHOOTER);
         shooterMotor.configFactoryDefault();
         shooterMotor.setNeutralMode(NeutralMode.Brake);
+
+        indexerMotor = new TalonSRX(RobotMap.INDEXER);
+        indexerMotor.configFactoryDefault();
+        indexerMotor.setNeutralMode(NeutralMode.Brake);
     }
 
     public void shoot(double speed) {
         shooterMotor.set(ControlMode.PercentOutput, speed);
     }
+    public void index(double speed){
+        indexerMotor.set(ControlMode.PercentOutput, speed);
+    }
 
     public void stop() {
         shooterMotor.set(ControlMode.PercentOutput, 0);
+        indexerMotor.set(ControlMode.PercentOutput, 0);
     }
+
 
 
 }

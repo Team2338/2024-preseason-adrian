@@ -26,6 +26,7 @@ public class DriveTrain extends SubsystemBase {
         leftMotor.setIdleMode(CANSparkBase.IdleMode.kBrake);
 
         drive = new DifferentialDrive(leftMotor, rightMotor);
+        drive.setMaxOutput(0.70);
 
     }
 
