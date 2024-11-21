@@ -25,7 +25,7 @@ public class AutosForwardTester extends Command {
     @Override
     public void execute() {
         //Robot.drivetrain.Tank(0.2,0.2);
-        Robot.drivetrain.driveArcade(.5,0);
+        Robot.drivetrain.driveArcade(-.5,0); //keep speed negative so it's easier to go straight to a ball
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.

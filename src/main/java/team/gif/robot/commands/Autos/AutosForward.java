@@ -24,7 +24,7 @@ public class AutosForward extends Command {
         double gain= .2;
         double error=0-Robot.pigeon.get360Heading();
         double rotation= gain * error;
-        Robot.drivetrain.driveArcade(.5,rotation);
+        Robot.drivetrain.driveArcade(-.5,rotation); //keep speed negative so it's easier to go straight to a ball
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
