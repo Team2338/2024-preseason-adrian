@@ -4,12 +4,14 @@
 
 package team.gif.robot;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.commands.ArcadeDrive;
+import team.gif.robot.commands.Autos.AutosGroup;
 import team.gif.robot.commands.TankDrive;
 import team.gif.robot.subsystems.DriveTrain;
 import team.gif.robot.subsystems.Shooter;
@@ -46,6 +48,9 @@ public class Robot extends TimedRobot {
     drivetrain.setDefaultCommand(new ArcadeDrive());
     shooter = new Shooter();
     indexer = new Shooter();
+    autonomousCommand= new AutosGroup();
+    pigeon = new Pigeon(new TalonSRX(RobotMap.PIGEON_ID));
+    pigeon.addToShuffleboard("Dashboard", "Heading");
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
@@ -82,7 +87,10 @@ public class Robot extends TimedRobot {
 
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
-  public void autonomousInit() {}
+  public void autonomousInit() {
+    System.out.println("auto init");
+    new AutosGroup().schedule();
+  }
 
   /** This function is called periodically during autonomous. */
   @Override
