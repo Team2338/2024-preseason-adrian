@@ -19,7 +19,7 @@ public class AutosShoot extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-
+        Robot.indexer.index(Constants.INDEXER_PERCENT);
         Robot.shooter.shoot(Constants.SHOOTER_PERCENT);
     }
 
@@ -34,5 +34,6 @@ public class AutosShoot extends Command {
     @Override
     public void end(boolean interrupted) {
         Robot.shooter.shoot(0);
+        Robot.indexer.index(0);
     }
 }

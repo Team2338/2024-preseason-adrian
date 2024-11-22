@@ -1,23 +1,21 @@
 package team.gif.robot.commands.Autos;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class AutosForwardTester extends Command {
+public class AutosTurn extends Command {
     double initialTime;
-
+    double Turn;
     double Time;
-    double Speed;
-    public AutosForwardTester(double time,double speed){
+    public AutosTurn(double turn,double time){
         super();
         addRequirements(Robot.drivetrain);
+        Turn = turn;
         Time = time;
-        Speed = speed;
     }
-
     @Override
     public void initialize() {
         initialTime = Timer.getFPGATimestamp();
@@ -28,7 +26,7 @@ public class AutosForwardTester extends Command {
     public void execute() {
         //Robot.drivetrain.Tank(0.2,0.2);
         //Robot.indexer.index(Constants.INDEXER_PERCENT);
-        Robot.drivetrain.driveArcade(Speed,0); //keep speed negative so it's easier to go straight to a ball
+        Robot.drivetrain.driveArcade(0,Turn);
 
     }
 
