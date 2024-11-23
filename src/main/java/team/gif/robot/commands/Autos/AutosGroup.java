@@ -16,10 +16,19 @@ public class AutosGroup extends SequentialCommandGroup {
                 new AutosTurn(.75,.85),
                 new AutosForwardTester(2.7,.5),
                 //new AutosTurn(.75,.15),
-                new AutosShoot()
+                new AutosShoot(),
 
                 // This is for right side
-
+                new AutosIndex(),
+                new AutosForwardTester(2,-.5),
+                new AutosTurn(-.75,.57),
+                new AutosIndex(),
+                new AutosForwardTester(2.05,-.5),
+                new AutosStopIndex(0),
+                new AutosTurn(-.75,.85),
+                new AutosForwardTester(2.7,.5),
+                //new AutosTurn(-.75,.15),
+                new AutosShoot()
         );
     }
 }
